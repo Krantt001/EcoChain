@@ -8,12 +8,12 @@ public class ConveyorBelt : MonoBehaviour
     [ContextMenu("Activate")]
     public void Activate()
     {
-        _animators.ForEach(animator => animator.SetTrigger("Activate"));
+        _animators.ForEach(animator => animator.Play("Activated"));
     }
     
     [ContextMenu("Deactivate")]
     public void Deactivate()
     {
-        _animators.ForEach(animator => animator.SetTrigger("Activate"));
+        _animators.ForEach(animator => animator.Play("Idle"));
     }
 }
