@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Bin : MonoBehaviour
 {
+    [SerializeField] Transform _pickingPointTransform;
     [SerializeField] ItemType _acceptedType;
     [SerializeField] int _capacity;
 
@@ -10,7 +11,9 @@ public class Bin : MonoBehaviour
 
     GameManager _gameManager;
 
-    public event Action<Bin> BinFull;
+    public Vector3 PickingPoint => _pickingPointTransform.position;
+    
+    public static event Action<Bin> BinFull;
 
     void Start()
     {
