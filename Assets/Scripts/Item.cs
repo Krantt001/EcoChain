@@ -1,13 +1,10 @@
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Item : MonoBehaviour
 {
     [SerializeField] Transform _transform;
     [SerializeField] float _speed;
     [SerializeField] SpriteRenderer _spriteRenderer;
-    [SerializeField] Rigidbody2D _rigidbody2D;
 
     bool _dragging;
     
@@ -47,7 +44,6 @@ public class Item : MonoBehaviour
     public void OnMouseDown()
     {
         _dragging = true;
-        _rigidbody2D.isKinematic = true;
     }
 
     public void OnMouseDrag()
