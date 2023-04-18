@@ -19,13 +19,16 @@ class Truck : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1.5f);
+
+        var timer = 0f;
         
-        Destroy(gameObject, 3);
-        
-        while (gameObject)
+        while (timer < 3f)
         {
             _transform.position = Vector3.MoveTowards(_transform.position, _transform.position + Vector3.right, _speed * Time.deltaTime);
+            timer += Time.deltaTime;
             yield return null;
         }
+        
+        Destroy(gameObject);
     }
 }

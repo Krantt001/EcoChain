@@ -37,7 +37,7 @@ public class Item : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.TryGetComponent(out Shredder _))
+        if (other.gameObject.TryGetComponent(out Hammer _))
         {
             Destroy(gameObject);
             // TODO : effet de particule explosion ou flamme
