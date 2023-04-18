@@ -5,13 +5,12 @@ public class Item : MonoBehaviour
     [SerializeField] Transform _transform;
     [SerializeField] float _speed;
     [SerializeField] SpriteRenderer _spriteRenderer;
-
-    bool _dragging;
     
     ItemData _itemData;
 
     Camera _mainCamera;
 
+    public bool IsOnConveyor { get; set; } = true;
     public Vector3 Direction { get; set; }
     
     public ItemData ItemData {
@@ -30,8 +29,11 @@ public class Item : MonoBehaviour
 
     void Update()
     {
-        var destination = _transform.position + Direction;
-        _transform.position = Vector3.MoveTowards(_transform.position, destination, _speed * Time.deltaTime);
+        if (IsOnConveyor)
+        {
+            var destination = _transform.position + Direction;
+            _transform.position = Vector3.MoveTowards(_transform.position, destination, _speed * Time.deltaTime);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -40,42 +42,5 @@ public class Item : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void OnMouseDown()
-    {
-        _dragging = true;
-    }
-
-    public void OnMouseDrag()
-    {
-        if (!_dragging)
-            return;
-
-        var mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        
-        _transform.position = new Vector3(mousePosition.x, mousePosition.y, 0);
-    }
-
-    public void OnMouseUp()
-    {
-        if (!_dragging)
-            return;
-
-        var hits = new RaycastHit2D[5];
-        var size = Physics2D.RaycastNonAlloc(_mainCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, hits);
-
-        for (int i = 0; i < size; i++)
-        {
-            var hit = hits[i];
-            
-            if (hit.collider.TryGetComponent(out Bin bin))
-            {
-                bin.Accept(ItemData);
-                break;
-            }
-        }
-
-        Destroy(gameObject);
     }
 }

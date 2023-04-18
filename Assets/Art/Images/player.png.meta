@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_0
+      name: player_0
       rect:
         serializedVersion: 2
         x: 7
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 572a33bc1d81a3145b586944329e18df
-      internalID: 30891058
+      spriteID: 679dd2dfa38c5724184b61202860d983
+      internalID: 20888051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_1
+      name: player_1
       rect:
         serializedVersion: 2
         x: 77
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85f1a3ec1feda1445bb27c696c44e209
-      internalID: -1492038906
+      spriteID: 5a29ce5691c55a549968dd2aa8e895c6
+      internalID: 764723719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_2
+      name: player_2
       rect:
         serializedVersion: 2
         x: 141
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a590434648191c84e8958cf3fe07acc9
-      internalID: -1595228737
+      spriteID: 22057d74446a93949b1fc2a590016ad5
+      internalID: 1591725402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_3
+      name: player_3
       rect:
         serializedVersion: 2
         x: 211
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1c57436a6bdb549bd73d3d911d6de4
-      internalID: -1680907620
+      spriteID: e976051cd1994b64dac657aa398b8045
+      internalID: -979574183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_4
+      name: player_4
       rect:
         serializedVersion: 2
         x: 6
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a457815eff8fb04297973bea8ec9d15
-      internalID: 1738374134
+      spriteID: 7d5d33c8864a47945ab0b5b7d81efd25
+      internalID: -1894007401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_5
+      name: player_5
       rect:
         serializedVersion: 2
         x: 77
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3d24b5b65689b3478a2318983650d42
-      internalID: -1837267758
+      spriteID: e9fc4edb85485914bb310ae103037aee
+      internalID: 1338443753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_6
+      name: player_6
       rect:
         serializedVersion: 2
         x: 140
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ee06bd32af22b84182d382c10b2533d
-      internalID: 269829123
+      spriteID: 1d96dae6d863f184da8ce44f33a25785
+      internalID: -943775638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_7
+      name: player_7
       rect:
         serializedVersion: 2
         x: 212
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83ce7ed6bf64a1e4db217543945cf078
-      internalID: 656625403
+      spriteID: 17d99bf4abff8e44f9c83e43d9ecbdad
+      internalID: -767438487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_8
+      name: player_8
       rect:
         serializedVersion: 2
         x: 7
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23c1ecd3331575343a203016df2fda03
-      internalID: -1070665101
+      spriteID: b00297d2ca32e18449e38d5f338133ea
+      internalID: -611524476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_9
+      name: player_9
       rect:
         serializedVersion: 2
         x: 77
@@ -320,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44821505f21b4084db4acc9dafd45632
-      internalID: 1140989376
+      spriteID: 0d82221a9c8569b4cba603c96823322c
+      internalID: 55678563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_10
+      name: player_10
       rect:
         serializedVersion: 2
         x: 141
@@ -341,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5c10d5f73251e942a2fdf0f45ebce92
-      internalID: -1505327510
+      spriteID: 5b5f19f20d360b04c97803d7fe1f9ad0
+      internalID: 900569426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_11
+      name: player_11
       rect:
         serializedVersion: 2
         x: 211
@@ -362,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06798d7885275a249a411e26e97ad27c
-      internalID: 875690019
+      spriteID: e7a9daaad937a544c8bf55ce3ec73e67
+      internalID: -1853144716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_13
+      name: player_13
       rect:
         serializedVersion: 2
         x: 6
@@ -383,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce84dd577676bd34f96cdd4963c384f1
-      internalID: -334476810
+      spriteID: a22646fa17bb3054ab81a7766cd7c60a
+      internalID: 1683567087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_14
+      name: player_14
       rect:
         serializedVersion: 2
         x: 77
@@ -404,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00b2462d13fe715469899995c90355ed
-      internalID: -865719181
+      spriteID: 91dd8ea9ed997f042b4680b2e1264bfe
+      internalID: 810058263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_15
+      name: player_15
       rect:
         serializedVersion: 2
         x: 141
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 170c62ff2e4d0124697a91a3f9de7dad
-      internalID: 1159869342
+      spriteID: a603dbff57f836840829c615426692cf
+      internalID: -1187154805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy  sheet wlaking and Idle_16
+      name: player_16
       rect:
         serializedVersion: 2
         x: 210
@@ -446,8 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdcbfe85e59ad8c4ca379f6b54bdf509
-      internalID: -1555196309
+      spriteID: 4acf62c97a37c2a4fbd35a0a5bc357ee
+      internalID: -966738435
       vertices: []
       indices: 
       edges: []
@@ -463,45 +463,45 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boy  sheet wlaking and Idle_14: -865719181
-      Boy  sheet wlaking and Idle_6: 269829123
-      Boy  sheet wlaking and Idle_26: 2037967217
-      Boy  sheet wlaking and Idle_10: -1505327510
-      Boy  sheet wlaking and Idle_0: 30891058
-      Boy  sheet wlaking and Idle_18: 1131961439
-      Boy  sheet wlaking and Idle_13: -334476810
-      Boy  sheet wlaking and Idle_15: 1159869342
-      Boy  sheet wlaking and Idle_24: -14306140
-      Boy  sheet wlaking and Idle_5: -1837267758
-      Boy  sheet wlaking and Idle_25: -1969473780
-      Boy  sheet wlaking and Idle_36: 413438727
-      Boy  sheet wlaking and Idle_17: -146607812
-      Boy  sheet wlaking and Idle_19: 1869893397
-      Boy  sheet wlaking and Idle_12: 357271242
-      Boy  sheet wlaking and Idle_8: -1070665101
-      Boy  sheet wlaking and Idle_29: 547679540
-      Boy  sheet wlaking and Idle_31: -1598912773
-      Boy  sheet wlaking and Idle_32: -757610841
-      Boy  sheet wlaking and Idle_4: 1738374134
-      Boy  sheet wlaking and Idle_28: -943839438
-      Boy  sheet wlaking and Idle_7: 656625403
-      Boy  sheet wlaking and Idle_22: 307280214
-      Boy  sheet wlaking and Idle_23: 1056252667
-      Boy  sheet wlaking and Idle_11: 875690019
-      Boy  sheet wlaking and Idle_20: -929395338
-      Boy  sheet wlaking and Idle_37: 683031690
-      Boy  sheet wlaking and Idle_27: -1457862027
-      Boy  sheet wlaking and Idle_33: 430336972
-      Boy  sheet wlaking and Idle_16: -1555196309
-      Boy  sheet wlaking and Idle_9: 1140989376
-      Boy  sheet wlaking and Idle_2: -1595228737
-      Boy  sheet wlaking and Idle_1: -1492038906
-      Boy  sheet wlaking and Idle_30: -1803319981
-      Boy  sheet wlaking and Idle_34: -751905270
-      Boy  sheet wlaking and Idle_3: -1680907620
-      Boy  sheet wlaking and Idle_35: -1741939774
-      Boy  sheet wlaking and Idle_21: 608799126
-      Boy  sheet wlaking and Idle_38: 293371558
+      player_1: 764723719
+      player_15: -1187154805
+      player_16: -966738435
+      player_8: -611524476
+      player_14: 810058263
+      player_12: 1843551196
+      player_19: -701019062
+      player_21: -67250465
+      player_26: 487178704
+      player_35: 1343390198
+      player_4: -1894007401
+      player_5: 1338443753
+      player_25: -1999243245
+      player_38: 988905951
+      player_37: -940431599
+      player_23: 1337109118
+      player_31: -1236320838
+      player_33: 1641740942
+      player_0: 20888051
+      player_9: 55678563
+      player_36: 698166095
+      player_24: -712204281
+      player_30: -968934298
+      player_3: -979574183
+      player_18: 2096627641
+      player_6: -943775638
+      player_10: 900569426
+      player_2: 1591725402
+      player_29: -1682903937
+      player_22: 591009208
+      player_34: 195999566
+      player_20: 1573721647
+      player_17: -1594383468
+      player_13: 1683567087
+      player_28: -879492145
+      player_32: 669463818
+      player_11: -1853144716
+      player_7: -767438487
+      player_27: 991269829
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

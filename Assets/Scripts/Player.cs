@@ -1,31 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Vector2 direction;
-    private Vector2 movement;
+    [SerializeField] Transform _transform;
+    [SerializeField] Sprite _leftSprite;
+    [SerializeField] Sprite _rightSprite;
+    [SerializeField] Sprite _upSprite;
+    [SerializeField] Sprite _downSprite;
+    [SerializeField] SpriteRenderer _spriteRenderer;
+    [SerializeField] float _distanceThreshold;
+    
+    Vector2 direction;
+    Vector2 movement;
 
-    [SerializeField]
-    public Sprite leftSprite;
-    [SerializeField]
-    public Sprite rightSprite;
-    [SerializeField]
-    public Sprite upSprite;
-    [SerializeField]
-    public Sprite downSprite;
-
-    private SpriteRenderer spriteRenderer;
-
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        Move();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Interact()
+    {
+        var items = FindObjectsOfType<Item>().ToList();
+
+        var minDistance = float.MaxValue;
+        Item closestItem = null;
+
+        foreach (var item in items)
+        {
+            var distance = Vector3.Distance(_transform.position, item.transform.position);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestItem = item;
+            }
+        }
+        
+        if (minDistance > _distanceThreshold)
+            return;
+
+        closestItem.IsOnConveyor = false;
+        closestItem.transform.SetParent(_transform);
+    }
+
+    void Move()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
@@ -35,16 +59,21 @@ public class Player : MonoBehaviour
 
         transform.Translate(movement, Space.World);
 
-        if(verticalInput > 0){
-             spriteRenderer.sprite = upSprite;
-        }else if(verticalInput < 0){
-             spriteRenderer.sprite = downSprite;
-        }else if (horizontalInput > 0){
-             spriteRenderer.sprite =  rightSprite;
-        }else if(horizontalInput < 0){
-             spriteRenderer.sprite = leftSprite;
+        if (verticalInput > 0)
+        {
+            _spriteRenderer.sprite = _upSprite;
         }
-
-        // transform.position += transform.position + new Vector3(movement.x, movement.y, 0f);
+        else if (verticalInput < 0)
+        {
+            _spriteRenderer.sprite = _downSprite;
+        }
+        else if (horizontalInput > 0)
+        {
+            _spriteRenderer.sprite = _rightSprite;
+        }
+        else if (horizontalInput < 0)
+        {
+            _spriteRenderer.sprite = _leftSprite;
+        }
     }
 }
