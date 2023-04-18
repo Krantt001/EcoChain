@@ -14,7 +14,6 @@ public class Bin : MonoBehaviour
     {
         if (itemData.ItemType == _acceptedType)
         {
-            Debug.Log("Item added");
             _count++;
 
             if (_count >= _capacity)
