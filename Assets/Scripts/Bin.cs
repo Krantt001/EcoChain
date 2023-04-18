@@ -8,13 +8,21 @@ public class Bin : MonoBehaviour
 
     int _count;
 
+    GameManager _gameManager;
+
     public event Action<Bin> BinFull;
-    
+
+    void Start()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+    }
+
     public void Accept(ItemData itemData)
     {
         if (itemData.ItemType == _acceptedType)
         {
             _count++;
+            _gameManager.Points++;
 
             if (_count >= _capacity)
             {
@@ -24,7 +32,7 @@ public class Bin : MonoBehaviour
         }
         else
         {
-            // Mauvais objet
+            _gameManager.Lives--;
         }
     }
 }

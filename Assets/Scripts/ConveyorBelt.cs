@@ -5,6 +5,11 @@ public class ConveyorBelt : MonoBehaviour
 {
     [SerializeField] List<Animator> _animators;
 
+    void Start()
+    {
+        Activate();
+    }
+    
     [ContextMenu("Activate")]
     public void Activate()
     {
