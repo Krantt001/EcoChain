@@ -11,6 +11,8 @@ public class Item : MonoBehaviour
     ItemData _itemData;
 
     Camera _mainCamera;
+
+    public Vector3 Direction { get; set; }
     
     public ItemData ItemData {
         get => _itemData;
@@ -28,8 +30,8 @@ public class Item : MonoBehaviour
 
     void Update()
     {
-        _transform.position = Vector3.MoveTowards(_transform.position, _transform.position + Vector3.left,
-            _speed * Time.deltaTime);
+        var destination = _transform.position + Direction;
+        _transform.position = Vector3.MoveTowards(_transform.position, destination, _speed * Time.deltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -37,7 +39,6 @@ public class Item : MonoBehaviour
         if (other.gameObject.TryGetComponent(out Hammer _))
         {
             Destroy(gameObject);
-            // TODO : effet de particule explosion ou flamme
         }
     }
 

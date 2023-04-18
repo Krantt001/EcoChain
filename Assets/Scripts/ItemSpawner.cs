@@ -7,6 +7,7 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] float _delayBetweenItems;
     [SerializeField] Transform _itemSpawnPoint;
     [SerializeField] Item _itemPrefab;
+    [SerializeField] Vector3 _direction;
     
     bool _isActive = true;
     float _timer;
@@ -25,6 +26,7 @@ public class ItemSpawner : MonoBehaviour
             _timer += _delayBetweenItems;
             var newItem = Instantiate(_itemPrefab, _itemSpawnPoint.position, Quaternion.identity);
             newItem.ItemData = _items[Random.Range(0, _items.Count)];
+            newItem.Direction = _direction;
         }
     }
 }
