@@ -5,7 +5,6 @@ public class Item : MonoBehaviour
     [SerializeField] Transform _transform;
     [SerializeField] float _speed;
     [SerializeField] SpriteRenderer _spriteRenderer;
-    [SerializeField] GameObject hitSFX;
 
     ItemData _itemData;
 
@@ -42,9 +41,6 @@ public class Item : MonoBehaviour
         if (other.gameObject.TryGetComponent(out Hammer _))
         {
             Destroy(gameObject);
-            GameObject itemHitSFX = Instantiate(hitSFX);
-            itemHitSFX.transform.position = this.transform.position;
-            itemHitSFX.transform.localScale = new Vector3(5, 5);
         }
     }
 }
