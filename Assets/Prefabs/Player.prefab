@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3945053716836464178}
   - component: {fileID: 3945053716836464177}
   - component: {fileID: 3945053716836464174}
-  m_Layer: 0
+  - component: {fileID: 2025425835}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +133,7 @@ MonoBehaviour:
   _downSprite: {fileID: 1591725402, guid: d00ebfbdcee721144a366965d029b96f, type: 3}
   _spriteRenderer: {fileID: 3945053716836464172}
   _distanceThreshold: 1.5
+  _animator: {fileID: 2025425835}
 --- !u!50 &3945053716836464174
 Rigidbody2D:
   serializedVersion: 4
@@ -153,3 +155,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &2025425835
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871283702375632352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2edb4c23ce8dd434e9be24e5c110fd41, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

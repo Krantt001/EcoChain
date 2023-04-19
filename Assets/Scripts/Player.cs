@@ -1,30 +1,83 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] Transform _transform;
-    [SerializeField] Sprite _leftSprite;
-    [SerializeField] Sprite _rightSprite;
-    [SerializeField] Sprite _upSprite;
-    [SerializeField] Sprite _downSprite;
-    [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] float _distanceThreshold;
+    [SerializeField] Animator _animator;
+    
+    IActionProvider _actionProvider;
     
     Vector2 direction;
     Vector2 movement;
+    
+    int _points;
+    ItemData _pickup;
+
+    public int Points
+    {
+        get => _points;
+        set
+        {
+            _points = value;
+            PointsChanged?.Invoke(_points);
+        }
+    }
+
+    public ItemData Pickup
+    {
+        get => _pickup;
+        set
+        {
+            _pickup = value;
+            PickupChanged?.Invoke(_pickup);
+        }
+    }
+
+    public Action<int> PointsChanged { get; set; }
+    public Action<ItemData> PickupChanged { get; set; }
+
+    void Awake()
+    {
+        if (name == "Player")
+            _actionProvider = new PlayerBehaviour();
+        else
+            _actionProvider = new AIBehaviour();
+    }
 
     void Update()
     {
         Move();
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (_actionProvider.Interacted)
         {
             Interact();
         }
     }
 
+    void Move()
+    {
+        direction = _actionProvider.Direction;
+
+        _animator.SetFloat("X", direction.x);
+        _animator.SetFloat("Y", direction.y);
+
+        movement = direction * 6f * Time.deltaTime;
+
+        transform.Translate(movement, Space.World);
+    }
+
     void Interact()
+    {
+        if (TryThrowInBin())
+            return;
+        
+        TryPickupClosestItem();
+    }
+
+    void TryPickupClosestItem()
     {
         var items = FindObjectsOfType<Item>().ToList();
 
@@ -41,39 +94,39 @@ public class Player : MonoBehaviour
                 closestItem = item;
             }
         }
-        
+
         if (minDistance > _distanceThreshold)
             return;
 
         closestItem.IsOnConveyor = false;
-        closestItem.transform.SetParent(_transform);
+        Pickup = closestItem.ItemData;
+        Destroy(closestItem.gameObject);
     }
 
-    void Move()
+    bool TryThrowInBin()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        var bins = FindObjectsOfType<Bin>().ToList();
 
-        direction = new Vector2(horizontalInput, verticalInput).normalized;
-        movement = direction * 6f * Time.deltaTime;
+        var minDistance = float.MaxValue;
+        Bin closestBin = null;
 
-        transform.Translate(movement, Space.World);
+        foreach (var bin in bins)
+        {
+            var distance = Vector3.Distance(_transform.position, bin.transform.position);
 
-        if (verticalInput > 0)
-        {
-            _spriteRenderer.sprite = _upSprite;
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestBin = bin;
+            }
         }
-        else if (verticalInput < 0)
-        {
-            _spriteRenderer.sprite = _downSprite;
-        }
-        else if (horizontalInput > 0)
-        {
-            _spriteRenderer.sprite = _rightSprite;
-        }
-        else if (horizontalInput < 0)
-        {
-            _spriteRenderer.sprite = _leftSprite;
-        }
+
+        if (minDistance > _distanceThreshold)
+            return false;
+
+        closestBin.Accept(this, Pickup);
+        Pickup = null;
+
+        return true;
     }
 }
