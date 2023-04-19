@@ -102,6 +102,7 @@ MonoBehaviour:
   _transform: {fileID: 1006953585167152183}
   _speed: 2.5
   _spriteRenderer: {fileID: 1006953585167152184}
+  hitSFX: {fileID: 7226583673155636401, guid: a2ab56839e1c9504ea9d141e95d0b16b, type: 3}
 --- !u!61 &3260684507542811547
 BoxCollider2D:
   m_ObjectHideFlags: 0

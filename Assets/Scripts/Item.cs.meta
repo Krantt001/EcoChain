@@ -1,3 +1,14 @@
 fileFormatVersion: 2
 guid: 36c6ae88fd064b4db7ab4dbe73ad8742
-timeCreated: 1681736162
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _transform: {instanceID: 0}
+  - _spriteRenderer: {instanceID: 0}
+  - hitSFX: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
