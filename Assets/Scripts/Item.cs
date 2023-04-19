@@ -7,9 +7,7 @@ public class Item : MonoBehaviour
     [SerializeField] SpriteRenderer _spriteRenderer;
 
     ItemData _itemData;
-
-    Camera _mainCamera;
-
+    
     public bool IsOnConveyor { get; set; } = true;
     public Vector3 Direction { get; set; }
     
@@ -20,11 +18,6 @@ public class Item : MonoBehaviour
             _itemData = value;
             _spriteRenderer.sprite = value.Sprite;
         }
-    }
-
-    void Start()
-    {
-        _mainCamera = Camera.main;
     }
 
     void Update()
