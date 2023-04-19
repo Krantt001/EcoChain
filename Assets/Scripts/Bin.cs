@@ -3,36 +3,30 @@ using UnityEngine;
 
 public class Bin : MonoBehaviour
 {
+    [SerializeField] Player _owner;
     [SerializeField] ItemType _acceptedType;
     [SerializeField] int _capacity;
 
     int _count;
-
-    GameManager _gameManager;
     
     public static event Action<Bin> BinFull;
 
-    void Start()
+    public void Accept(Player player, ItemData itemData)
     {
-        _gameManager = FindObjectOfType<GameManager>();
-    }
-
-    public void Accept(ItemData itemData)
-    {
+        if (player != _owner || itemData == null)
+            return;
+        
         if (itemData.ItemType == _acceptedType)
         {
             _count++;
-            _gameManager.Points++;
+            _owner.Points++;
+            _owner.Pickup = null;
 
             if (_count >= _capacity)
             {
                 BinFull?.Invoke(this);
                 _count = 0;
             }
-        }
-        else
-        {
-            _gameManager.Lives--;
         }
     }
 }

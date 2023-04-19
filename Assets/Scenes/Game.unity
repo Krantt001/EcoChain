@@ -2989,7 +2989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1078844233}
   _scoreText: {fileID: 745321567}
-  _itemImage: {fileID: 2143105239}
+  _image: {fileID: 2143105239}
 --- !u!114 &871989565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3091,7 +3091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 994375626}
   _scoreText: {fileID: 1645498237}
-  _itemImage: {fileID: 2083560766}
+  _image: {fileID: 2083560766}
 --- !u!1 &919227983
 GameObject:
   m_ObjectHideFlags: 0
