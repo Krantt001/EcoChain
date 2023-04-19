@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         if (points >= _pointLimit)
         {
             var player = _players.First(player => player.Points == points);
-            _winText.text = $"{player.name} a gagné !";
+            _winText.text = $"{player.name} wins !";
             _winText.gameObject.SetActive(true);
             Invoke(nameof(ChangeScene), 3);
             OnDisable();
