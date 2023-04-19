@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] Transform _transform;
     [SerializeField] float _distanceThreshold;
     [SerializeField] Animator _animator;
+    [SerializeField] float _speed;
     
     IActionProvider _actionProvider;
     
@@ -64,9 +65,9 @@ public class Player : MonoBehaviour
         _animator.SetFloat("X", direction.x);
         _animator.SetFloat("Y", direction.y);
 
-        movement = direction * 6f * Time.deltaTime;
+        movement = direction * (_speed * Time.deltaTime);
 
-        transform.Translate(movement, Space.World);
+        transform.Translate(movement);
     }
 
     void Interact()
