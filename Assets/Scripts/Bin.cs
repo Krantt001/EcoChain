@@ -8,6 +8,9 @@ public class Bin : MonoBehaviour
     [SerializeField] int _capacity;
 
     int _count;
+
+    public Player Owner => _owner;
+    public ItemType AcceptedType => _acceptedType;
     
     public static event Action<Bin> BinFull;
 

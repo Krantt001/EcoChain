@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     int _points;
     ItemData _pickup;
 
+    public float DistanceThreshold => _distanceThreshold;
+
     public int Points
     {
         get => _points;
@@ -45,10 +47,10 @@ public class Player : MonoBehaviour
         if (name == "Player")
             _actionProvider = new PlayerBehaviour();
         else
-            _actionProvider = new AIBehaviour();
+            _actionProvider = GetComponent<AIBehaviour>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         Move();
 

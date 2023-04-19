@@ -1,16 +1,15 @@
 using UnityEngine;
+using Tree = BehaviourTree.Tree;
 
-public class AIBehaviour : IActionProvider
+public class AIBehaviour : MonoBehaviour, IActionProvider
 {
-    public Vector2 Direction
+    [SerializeField] Tree _tree;
+
+    void Update()
     {
-        get
-        {
-            var horizontalInput = Random.Range(-1f, 1f);
-            var verticalInput = Random.Range(-1f, 1f);
-            return new Vector2(horizontalInput, verticalInput).normalized;
-        }
+        _tree.Execute(this);
     }
 
-    public bool Interacted => true;
+    public Vector2 Direction { get; set; }
+    public bool Interacted { get; set; }
 }
