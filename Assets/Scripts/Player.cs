@@ -106,6 +106,9 @@ public class Player : MonoBehaviour
 
     bool TryThrowInBin()
     {
+        if (Pickup == null)
+            return false;
+        
         var bins = FindObjectsOfType<Bin>().ToList();
 
         var minDistance = float.MaxValue;
