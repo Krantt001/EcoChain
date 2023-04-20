@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -35,9 +36,7 @@ public class Item : MonoBehaviour
         if (other.gameObject.TryGetComponent(out Hammer _))
         {
             Destroy(gameObject);
-            GameObject hitItemSFX = Instantiate(hitSFX);
-            hitItemSFX.transform.position = this.transform.position;
-            hitItemSFX.transform.localScale = new Vector3(5, 5);
+            Instantiate(hitSFX, transform.position, Quaternion.identity);
         }
     }
 }
