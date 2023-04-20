@@ -8,9 +8,20 @@ namespace BehaviourTree
     {
         public override NodeResult Evaluate(AIBehaviour aiBehaviour)
         {
-            return _children.All(child => child.Evaluate(aiBehaviour) == NodeResult.Success)
-                ? NodeResult.Success
-                : NodeResult.Failure;
+            foreach (var node in _children)
+            {
+                switch (node.Evaluate(aiBehaviour))
+                {
+                    case NodeResult.Failure:
+                        return NodeResult.Failure;
+                    case NodeResult.Success:
+                        continue;
+                    case NodeResult.Running:
+                        return NodeResult.Running;
+                }
+            }
+
+            return NodeResult.Success;
         }
     }
 }

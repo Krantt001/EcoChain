@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 namespace BehaviourTree
@@ -8,9 +7,20 @@ namespace BehaviourTree
     {
         public override NodeResult Evaluate(AIBehaviour aiBehaviour)
         {
-            return _children.Any(child => child.Evaluate(aiBehaviour) == NodeResult.Success)
-                ? NodeResult.Success
-                : NodeResult.Failure;
+            foreach (var node in _children)
+            {
+                switch (node.Evaluate(aiBehaviour))
+                {
+                    case NodeResult.Failure:
+                        continue;
+                    case NodeResult.Success:
+                        return NodeResult.Success;
+                    case NodeResult.Running:
+                        return NodeResult.Running;
+                }
+            }
+
+            return NodeResult.Failure;
         }
     }
 }

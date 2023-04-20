@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fffc0435ff4c3baf1b900babdf91ec, type: 3}
-  m_Name: Sequence 2
+  m_Script: {fileID: 11500000, guid: 5f9b86ee7e824a00b2e324d78e5c7572, type: 3}
+  m_Name: Player Has No Locked Bin
   m_EditorClassIdentifier: 
-  _children:
-  - {fileID: 11400000, guid: 2faf465012b18024692e30aceca71807, type: 2}
-  - {fileID: 11400000, guid: 5c3a69949af76524bbc8ee7aea046484, type: 2}
+  _children: []

@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa8316a1d322423991e53191792d4f0a, type: 3}
-  m_Name: Selector
+  m_Name: Selector 1
   m_EditorClassIdentifier: 
   _children:
-  - {fileID: 11400000, guid: d7c5b465365de5d4d9bf6ab34abcd302, type: 2}
-  - {fileID: 11400000, guid: 82447eddf5d6ab0459df180d9be395af, type: 2}
-  - {fileID: 11400000, guid: 8efc286f6fb000c4ca43f9951995acf3, type: 2}
+  - {fileID: 11400000, guid: add9feca87974e24abc9d231243eb73e, type: 2}
+  - {fileID: 11400000, guid: ddd65fae104f0044eaf0ebb553b0d6af, type: 2}

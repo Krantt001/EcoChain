@@ -77,33 +77,10 @@ public class Player : MonoBehaviour
         if (TryThrowInBin())
             return;
         
-        TryPickupClosestItem();
-    }
-
-    void TryPickupClosestItem()
-    {
-        var items = FindObjectsOfType<Item>().ToList();
-
-        var minDistance = float.MaxValue;
-        Item closestItem = null;
-
-        foreach (var item in items)
-        {
-            var distance = Vector3.Distance(_transform.position, item.transform.position);
-
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                closestItem = item;
-            }
-        }
-
-        if (minDistance > _distanceThreshold)
+        if (TryLock())
             return;
-
-        closestItem.IsOnConveyor = false;
-        Pickup = closestItem.ItemData;
-        Destroy(closestItem.gameObject);
+        
+        TryPickupClosestItem();
     }
 
     bool TryThrowInBin()
@@ -131,8 +108,57 @@ public class Player : MonoBehaviour
             return false;
 
         closestBin.Accept(this, Pickup);
-        Pickup = null;
-
         return true;
+    }
+
+    bool TryLock()
+    {
+        var bins = FindObjectsOfType<Bin>().ToList();
+
+        var minDistance = float.MaxValue;
+        Bin closestBin = null;
+
+        foreach (var bin in bins)
+        {
+            var distance = Vector3.Distance(_transform.position, bin.transform.position);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestBin = bin;
+            }
+        }
+
+        if (minDistance > _distanceThreshold || closestBin.Owner == this)
+            return false;
+
+        closestBin.Lock();
+        return true;
+    }
+
+    void TryPickupClosestItem()
+    {
+        var items = FindObjectsOfType<Item>().ToList();
+
+        var minDistance = float.MaxValue;
+        Item closestItem = null;
+
+        foreach (var item in items)
+        {
+            var distance = Vector3.Distance(_transform.position, item.transform.position);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestItem = item;
+            }
+        }
+
+        if (minDistance > _distanceThreshold)
+            return;
+
+        closestItem.IsOnConveyor = false;
+        Pickup = closestItem.ItemData;
+        Destroy(closestItem.gameObject);
     }
 }
